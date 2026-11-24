@@ -79,7 +79,24 @@ Build an isolated cybersecurity practice lab on my own laptop using VirtualBox a
   sudo nmcli connection down "Wired connection 1"
   sudo nmcli connection up "Wired connection 1"
   ```
-
+- **Kali had no network access (Destination Host Unreachable):** Kali had the static IP 10.0.0.2/24 and gateway 10.0.0.1, but `ping 10.0.0.1` failed with "Destination Host Unreachable".
+  - **Diagnosis:** `ip route` showed the correct IP, subnet and gateway, so the settings inside Kali were fine. Then I checked VirtualBox and found that Adapter 1 was attached to plain **NAT** instead of **NAT Network**. Plain NAT uses its own 10.0.2.x network, so nothing was answering at 10.0.0.1.
+  - **Test:** I switched Kali to DHCP and it got 10.0.2.15 with gateway 10.0.2.2. Internet worked, which confirmed the VM was on the default NAT network and not on my lab network.
+  - **Fix:**
+    1. Created the NAT Network `NatNetwork` (10.0.0.0/24, DHCP enabled) in VirtualBox.
+    2. Shut down Kali and set Adapter 1 to **NAT Network** with the name **NatNetwork**.
+    3. Booted Kali. DHCP gave it 10.0.0.3/24 and internet worked.
+    4. Set the static IP with `nmcli`:
+       ```
+       sudo nmcli con mod "Wired connection 1" ipv4.method manual ipv4.addresses 10.0.0.2/24 ipv4.gateway 10.0.0.1 ipv4.dns 10.0.0.1
+       sudo nmcli con mod "Wired connection 1" ipv4.dad-timeout 0
+       sudo nmcli con down "Wired connection 1"
+       sudo nmcli con up "Wired connection 1"
+       ```
+    5. Verified with `ip a` (10.0.0.2/24) and `ping -c 4 google.com` (0% packet loss).
+  - **Lesson:** a static IP only works if the VM adapter is attached to the network that uses that subnet. When networking fails, check the VirtualBox adapter type before changing anything inside Linux.
+- **Typo in the IP address (`Invalid IPv4 address '10.0.2'`):** I typed `10.0.2/24` instead of `10.0.0.2/24`. nmcli rejected it, so nothing changed and the connection restarted with the old settings. I retyped the command with the full four-number address.
+- **Copy/paste not working in Kali:** the Shared Clipboard was not enabled yet. I set Shared Clipboard and Drag'n'Drop to Bidirectional in the VM settings, and used Ctrl+Shift+V to paste in the Kali terminal.
 ## What I Learned
 - Why a NAT Network keeps lab traffic isolated from my real network.
 - Why snapshots matter: a broken VM can be rolled back in seconds.
