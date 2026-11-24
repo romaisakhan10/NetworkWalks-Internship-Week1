@@ -41,11 +41,7 @@ Build an isolated cybersecurity practice lab on my own laptop using VirtualBox a
 | Clipboard and drag/drop (Bidirectional) | `screenshots/04-clipboard-dragdrop.png` |
 | Shared folder list | `screenshots/05-shared-folder.png` |
 | Shared folder visible in Kali | `screenshots/06-sf-downloads.png` |
-| Static IP settings | `screenshots/07-static-ip.png` |
-| `ip a` showing 10.0.0.2/24 | `screenshots/08-ip-a.png` |
-| Ping to google.com | `screenshots/09-ping.png` |
-| Snapshot | `screenshots/10-snapshot.png` |
-| SHA256 check | `screenshots/11-sha256.png` |
+
 
 ## Problems I Faced and How I Solved Them
 - **Download blocked (`ERR_CONNECTION_RESET`):** my ISP was resetting the connection to the Kali download. Solved by [write what worked: VPN / torrent / different network].
