@@ -20,8 +20,8 @@ Build an isolated cybersecurity practice lab on my own laptop using VirtualBox a
 | Clipboard and drag/drop enabled | Done – Bidirectional |
 | Shared folder (Downloads) from host | Done – visible in Kali as `sf_Downloads` |
 | Full internet access | Done – `ping google.com`, 0% packet loss |
-| Kali IP = 10.0.0.2/24 | [ ] tick after `ip a` shows 10.0.0.2/24 |
-| Snapshot of the VM | [ ] tick after snapshot is taken |
+| Kali IP = 10.0.0.2/24 | Done `ip a` shows 10.0.0.2/24 |
+| Snapshot of the VM | Done |
 
 ## Steps I Followed
 1. Downloaded the Kali VirtualBox image from kali.org and verified its **SHA256** checksum with `Get-FileHash` (hash matched).
@@ -37,6 +37,8 @@ Build an isolated cybersecurity practice lab on my own laptop using VirtualBox a
 
 ## Screenshots
 
+## Screenshots
+
 ### Kali Linux running in VirtualBox
 ![Kali desktop](screenshots01-kali-desktop.PNG)
 
@@ -49,8 +51,20 @@ Build an isolated cybersecurity practice lab on my own laptop using VirtualBox a
 ### Network connection settings in Kali
 ![Wired connection](wired-connection.PNG)
 
-### Terminal – IP address and connectivity test
+### Terminal - shared folder (sf_Downloads)
 ![Kali terminal](kali-terminal.PNG)
+
+### Terminal - static IP 10.0.0.2/24
+![IP address](ip-a-static.PNG)
+
+### Terminal - internet connectivity test
+![Ping google](ping-google.PNG)
+
+### Shared folder settings (Downloads)
+![Shared folders](shared-folders.PNG)
+
+### Snapshot of the VM
+![Snapshot](snapshot.PNG)
 
 ### SHA256 checksum verification of the downloaded image
 ![SHA256 verified](sha256-verified.PNG)
