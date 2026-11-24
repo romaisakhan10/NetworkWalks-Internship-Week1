@@ -1,8 +1,11 @@
 # Week 1 – Practical Lab Environment Setup (VirtualBox + Kali Linux)
 
-**Internship:** Cybersecurity Internship, Networkwalks Academy
+**Internship:** Cybersecurity Internship, Networkwalks Academy 
+<br>
 **Mentor:** Waqas Karim (CCIE)
+<br>
 **Intern:** Romaisa Khan
+<br>
 **Project:** WK1-PM1 – Lab Setup
 
 ## Objective
@@ -36,9 +39,6 @@ Build an isolated cybersecurity practice lab on my own laptop using VirtualBox a
 
 ### Kali Linux running in VirtualBox
 ![Kali desktop](screenshots01-kali-desktop.PNG)
-
-### NAT Network (10.0.0.0/24, DHCP enabled)
-![NAT Network](screenshots02-nat-network.PNG)
 
 ### VM network settings (Adapter 1 = NAT Network)
 ![VM network settings](screenshots03-vm-network.PNG)
