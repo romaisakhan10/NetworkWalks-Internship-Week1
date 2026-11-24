@@ -35,25 +35,25 @@ Build an isolated cybersecurity practice lab on my own laptop using VirtualBox a
 ## Screenshots
 
 ### Kali Linux running in VirtualBox
-![Kali desktop](screenshots01-kali-desktop.png.PNG)
+![Kali desktop](screenshots01-kali-desktop.PNG)
 
 ### NAT Network (10.0.0.0/24, DHCP enabled)
-![NAT Network](screenshots02-nat-network.png.PNG)
+![NAT Network](screenshots02-nat-network.PNG)
 
 ### VM network settings (Adapter 1 = NAT Network)
-![VM network settings](screenshots03-vm-network.png.PNG)
+![VM network settings](screenshots03-vm-network.PNG)
 
 ### Kali login screen
-![Kali login](kali-login.png)
+![Kali login](kali-login.PNG)
 
 ### Network connection settings in Kali
-![Wired connection](wired-connection.png)
+![Wired connection](wired-connection.PNG)
 
 ### Terminal – IP address and connectivity test
-![Kali terminal](kali-terminal.png)
+![Kali terminal](kali-terminal.PNG)
 
 ### SHA256 checksum verification of the downloaded image
-![SHA256 verified](sha256-verified.png)
+![SHA256 verified](sha256-verified.PNG)
 
 ## Problems I Faced and How I Solved Them
 - **Download blocked (`ERR_CONNECTION_RESET`):** the connection to the Kali download kept being reset. I verified the final file with its SHA256 checksum to make sure it was complete and genuine.
